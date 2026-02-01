@@ -1,7 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
-const { loginRouter } = require("./routes/exportRoutes");
+const { loginRouter, courtRoutes, timeslotRoutes, bookingRoutes } = require("./routes/exportRoutes");
 
 const app = express();
 
@@ -14,6 +14,9 @@ connectDB();
 
 // Routes
 app.use("/api/auth", loginRouter);
+app.use("/api/courts", courtRoutes);
+app.use("/api/timeslots", timeslotRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 // Test route
 app.get('/', (req, res) => {

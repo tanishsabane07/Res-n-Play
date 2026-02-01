@@ -25,6 +25,10 @@ const timeSlotSchema = new mongoose.Schema({
   price: {
     type: Number,
     required: true
+  },
+  unavailabilityReason: {
+    type: String,
+    default: null
   }
 }, {
   timestamps: true

@@ -41,7 +41,10 @@ const bookingSchema = new mongoose.Schema({
     default: 'pending'
   },
   paymentId: String, // For payment gateway integration
-  notes: String
+  paymentMethod: String, // 'card', 'upi', 'netbanking', etc.
+  notes: String,
+  cancellationReason: String,
+  cancelledAt: Date
 }, {
   timestamps: true
 });
